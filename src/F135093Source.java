@@ -43,6 +43,9 @@ public class F135093Source {
         node startState = new node(0, 0, 0); // state used to start from
         visitedStates.push(startState);
         distinctStates.add(startState);
+        // node testNode = new node(0, 0, 2);
+        // visitedStates.push(testNode);
+        // distinctStates.add(testNode);
 
         while (!visitedStates.isEmpty()) {
             node currentNode = visitedStates.pop();
@@ -95,7 +98,7 @@ public class F135093Source {
             if (currentNode.jug2 > 0) { // if jug2 contains liquid
                 // pour jug2 into jug1
                 if ((currentNode.jug2 + currentNode.jug1) <= jug1Capacity) { // if pouring all of jug2 into jug1 doesn't
-                                                                             // exceed jug2 capacity
+                                                                             // exceed jug1 capacity
                     createNewState(currentNode.jug2 + currentNode.jug1, 0, currentNode.jug3); // create new node with
                                                                                               // jug2 poured into jug1
                 } else { // if pouring all of jug2 into jug2 exceeds jug1 capacity
@@ -117,7 +120,7 @@ public class F135093Source {
                 // pour jug2 into jug3
                 if ((currentNode.jug2 + currentNode.jug3) <= jug3Capacity) { // if pouring all of jug2 into jug3 doesn't
                                                                              // exceed jug3 capacity
-                    createNewState(currentNode.jug1, 0, currentNode.jug1 + currentNode.jug3); // create new node with
+                    createNewState(currentNode.jug1, 0, currentNode.jug2 + currentNode.jug3); // create new node with
                                                                                               // jug2 poured into jug3
                 } else { // if pouring all of jug2 into jug3 exceeds jug3 capacity
                     int excess = (currentNode.jug2 - (jug3Capacity - currentNode.jug3)); // get excess from when pouring
@@ -202,7 +205,7 @@ public class F135093Source {
             i++;
             System.out.println("Node " + i + ": (" + node.jug1 + ", " + node.jug2 + ", " + node.jug3 + ")");
         }
-        System.out.println(distinctStates.size() + " Distinct nodes");
+        System.out.println(i + " Distinct nodes");
         System.out.println("Time taken for execution: " + duration / 1000000 + "ms");
     }
 
