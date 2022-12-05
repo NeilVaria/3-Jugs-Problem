@@ -1,3 +1,11 @@
+//Java Program that generates all distinct nodes of the water jug problem from 3 integer inputs, using dfs.
+
+//As this is a dfs, a stack must be used. New nodes are added to the stack. 
+//The search iterates through the stack and removes it when it is being expanded.
+
+//A set is used to store all distinct states as sets do not allow for duplicate values, although an array list could have been used in this instance.
+//This is because before pushing to the stack, nodes are checked to see if they already exist in the set.
+//This means that no duplicate values can ever be stored.
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Stack;
@@ -43,7 +51,7 @@ public class F135093Source {
                 jugCapacities[i] = jugCapacityInput.nextInt();
             }
         }
-        long startTime = System.nanoTime();
+        long startTime = System.nanoTime(); //Log execution start time
         int jug1Capacity = jugCapacities[0];
         int jug2Capacity = jugCapacities[1];
         int jug3Capacity = jugCapacities[2];
@@ -148,12 +156,13 @@ public class F135093Source {
                 createNewState(currentNode.jug1, currentNode.jug2, jug3Capacity); // fill jug3
             }
         }
-        long endTime = System.nanoTime();
-        long duration = (endTime - startTime);
+        long endTime = System.nanoTime(); // log execution end time
+        long duration = (endTime - startTime / 1000000);
         String nodeString = sb.toString();
+        //Print results
         System.out.println(nodeString);
         System.out.println(nodeCount + " Distinct nodes");
-        System.out.println("Time taken for execution: " + duration / 1000000 + "ms");
+        System.out.println("Time taken for execution: " + duration + "ms");
     }
 
 }
