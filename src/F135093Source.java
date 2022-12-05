@@ -36,6 +36,10 @@ public class F135093Source {
             String[] numberString = { "First", "Second", "Third" };
             for (int i = 0; i < jugCapacities.length; i++) {
                 System.out.print("Enter Capacity of " + numberString[i] + " Jug: ");
+                while (!jugCapacityInput.hasNextInt()) { //checks input is int
+                    System.out.print("Please Enter Capacity of " + numberString[i] + " Jug as a positive integer: ");
+                    jugCapacityInput.next();
+                }
                 jugCapacities[i] = jugCapacityInput.nextInt();
             }
         }
