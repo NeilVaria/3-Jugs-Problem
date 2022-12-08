@@ -1,6 +1,6 @@
 //Java Program that generates all distinct nodes of the water jug problem from 3 integer inputs, using dfs.
 
-//A stack is used to to store states to visit as the searcg method is dfs
+//A stack is used to store states to visit as the search method is dfs
 //The search iterates through the stack and removes it when it is being expanded.
 
 //A set is used to store all distinct states as sets do not allow for duplicate values, although an array list could have been used in this instance.
