@@ -45,7 +45,33 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a java project delivered as my University coursework as part of my second year AI methods module. It uses a depth first seach to algorithmically generate a list of all possible volumes of water in 3 jugs, given the capacities of the 3 jugs.
+This is a Java project delivered as a University assignment. It uses a depth first seach to algorithmically generate a list of all possible volumes of water in 3 jugs with user defined capacities.
+
+#### What is the 3 Jug Problem?
+
+The 3 jug problem typically involves three jugs with user-defined capacities. The objective is to measure a specific quantity of water using these jugs. The challenge lies in determining the series of steps required to achieve this goal, given that the jugs can only be filled completely, emptied completely, or poured from one jug to another until one of the jugs is either full or empty.
+
+#### Die hard 3
+
+A famous depiction of a similar problem appears in Die Hard 3, where they must transfer the correct amount of water into two jugs to defuse a bomb:
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=BVtQNK_ZUJg&t=5s" title="Die hard 3 : Jugs Problem">
+    <img src="https://github.com/NeilVaria/3-Jugs-Problem/assets/60001894/78af3e19-ba88-4126-a24e-f45a48c03f4d" alt="Die hard 3 : Jugs Problem">
+  </a>
+</p>
+
+#### How It Works
+
+The project uses a combination of algorithmic techniques to generate and explore all possible states of the jugs. Each state is represented by a triplet (a, b, c), where 'a', 'b', and 'c' represent the current amount of water in each jug. The system explores all possible transitions from one state to another by:
+
+1. Filling any of the jugs to its maximum capacity.
+2. Emptying any of the jugs completely.
+3. Pouring water from one jug into another until either the source jug is empty or the destination jug is full.
+
+By systematically applying these transitions and tracking the states visited, the project generates a complete set of distinct states that can be achieved.
+
+In this implementation, the program allows users to input the capacities of the three jugs and then generates all distinct states using a depth-first search (DFS) approach, ensuring that all possible configurations are explored and recorded.
 
 
 <!-- GETTING STARTED -->
