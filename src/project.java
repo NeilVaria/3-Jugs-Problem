@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.util.Set;
 
-public class F135093Source {
+public class project {
     public static Stack<node> statesToVisit = new Stack<>(); // Stack to store all nodes to visit
     public static Set<node> distinctStates = new HashSet<node>(); // Set to store all visited nodes -- set used as only distinct states may be stored
     public static int[] jugCapacities = new int[3];
